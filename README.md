@@ -1,38 +1,98 @@
-# sv
+# Stash Landing Page
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, responsive landing page for Stash - a fast, local-first CLI article manager built in Rust.
 
-## Creating a project
+## Design
 
-If you're seeing this, you've probably already done this step. Congrats!
+Inspired by [rollups.com](https://rollups.com/), featuring:
+- Dark green color scheme with geometric patterns
+- Clean, spacious layout with generous whitespace
+- Terminal mockups showcasing CLI workflows
+- Responsive design for all devices
+- Smooth animations and hover effects
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Tech Stack
 
-# create a new project in my-app
-npx sv create my-app
+- **SvelteKit** - Modern web framework
+- **Tailwind CSS v4** - Utility-first styling
+- **TypeScript** - Type safety
+- **Bun** - Fast package manager and runtime
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   └── components/
+│       ├── Hero.svelte           # Hero section with install buttons
+│       ├── InstallButtons.svelte # Platform-specific install commands
+│       ├── UseCases.svelte       # Two ways to use Stash
+│       ├── InAction.svelte       # Workflow demonstrations
+│       ├── Features.svelte       # Key features grid
+│       ├── SocialProof.svelte    # GitHub stats and trust indicators
+│       ├── FAQ.svelte            # Expandable FAQ accordion
+│       └── Footer.svelte         # Footer with links
+├── routes/
+│   ├── +layout.svelte            # Layout with SEO meta tags
+│   └── +page.svelte              # Main landing page
+└── app.css                       # Custom styles and theme
 ```
 
-## Developing
+## Sections
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. **Hero** - Large headline, subheadline, install buttons for macOS/Windows/Linux, terminal preview
+2. **Use Cases** - Quick Save workflow and Power User features
+3. **In Action** - Four workflow examples with terminal mockups
+4. **Features** - Six key features in a grid layout
+5. **Social Proof** - GitHub stats and tech stack badges
+6. **FAQ** - Common questions with accordion
+7. **Footer** - Links to documentation, GitHub, and resources
 
-```sh
-npm run dev
+## Development
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Start the development server:
+
+```bash
+bun run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Building
 
-To create a production version of your app:
+Create a production build:
 
-```sh
-npm run build
+```bash
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the production build:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+bun run preview
+```
+
+## Features
+
+- ✅ Responsive design (mobile, tablet, desktop)
+- ✅ Copy-to-clipboard for install commands
+- ✅ Smooth scroll behavior
+- ✅ Terminal mockups with syntax highlighting
+- ✅ Interactive FAQ accordion
+- ✅ SEO optimized with meta tags
+- ✅ Dark theme with custom color palette
+- ✅ Hover effects and animations
+
+## Customization
+
+To customize for your own CLI tool:
+
+1. Update colors in `src/app.css` (@theme section)
+2. Replace install commands in `InstallButtons.svelte`
+3. Update GitHub links in `Footer.svelte` and `SocialProof.svelte`
+4. Modify content in each component to match your tool's features
+5. Update meta tags in `+layout.svelte`
+
+## License
+
+MIT

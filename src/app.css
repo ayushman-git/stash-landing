@@ -1,1 +1,130 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Dark green color palette inspired by rollups.com */
+  --color-dark-green-950: #0a0f0d;
+  --color-dark-green-900: #1a3a2e;
+  --color-dark-green-800: #2d5a4a;
+  --color-dark-green-700: #3d6f5c;
+  --color-accent-green-400: #86efac;
+  --color-accent-green-500: #4ade80;
+  --color-accent-green-600: #22c55e;
+  
+  /* Typography */
+  --font-size-display: 4.5rem;
+  --line-height-display: 1.1;
+}
+
+/* Global styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Geometric background patterns */
+.bg-geometric {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(77, 222, 128, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(77, 222, 128, 0.03) 0%, transparent 50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-green-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-green-800);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-green-700);
+}
+
+/* Terminal mockup styles */
+.terminal-window {
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: #323232;
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d4d4d4;
+}
+
+/* Code syntax highlighting */
+.token-command {
+  color: #4ade80;
+}
+
+.token-arg {
+  color: #86efac;
+}
+
+.token-flag {
+  color: #60a5fa;
+}
+
+.token-comment {
+  color: #6b7280;
+}
+
+.token-output {
+  color: #d4d4d4;
+}
