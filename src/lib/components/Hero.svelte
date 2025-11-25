@@ -33,8 +33,6 @@
 			<!-- Subheadline -->
 			<p class="body-large mb-10 text-text-secondary">
 				Fast, local-first CLI tool for saving, organizing, and reading articles.
-				<br class="hidden sm:block" />
-				Your articles, your way. No cloud, no tracking, just pure speed.
 			</p>
 
 			<!-- Install command -->
