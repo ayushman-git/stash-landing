@@ -91,15 +91,15 @@
 			<!-- Quick stats -->
 			<div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-text-muted">
 				<div class="flex items-center gap-2">
-					<Timer size={18} strokeWidth={1.5} class="text-accent" />
+					<Timer size={18} strokeWidth={1.5} class="text-text-muted" />
 					<span>Sub-100ms operations</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<WifiOff size={18} strokeWidth={1.5} class="text-accent" />
+					<WifiOff size={18} strokeWidth={1.5} class="text-text-muted" />
 					<span>Offline-first</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<Shield size={18} strokeWidth={1.5} class="text-accent" />
+					<Shield size={18} strokeWidth={1.5} class="text-text-muted" />
 					<span>Privacy-focused</span>
 				</div>
 			</div>
