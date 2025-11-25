@@ -3,7 +3,7 @@
 </script>
 
 <section class="bg-bg-primary py-16 md:py-24">
-	<div class="mx-auto max-w-(--max-content) px-6">
+	<div class="mx-auto max-w-(--max-content) px-6 mb-64">
 		<!-- Section header -->
 		<div class="mb-16 max-w-2xl">
 			<p class="mb-3 font-mono text-sm text-text-muted">// the boring-but-important stuff</p>

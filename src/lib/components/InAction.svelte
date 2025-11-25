@@ -2,7 +2,7 @@
 	// Workflows with personality
 </script>
 
-<section class="bg-bg-secondary py-16 md:py-24">
+<section class="bg-bg-secondary py-16 md:py-64">
 	<div class="mx-auto max-w-(--max-content) px-6">
 		<!-- Section header -->
 		<div class="mb-16 max-w-2xl">
