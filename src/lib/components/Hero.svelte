@@ -1,127 +1,107 @@
 <script lang="ts">
-	import InstallButtons from './InstallButtons.svelte';
+	import { Check, Copy } from 'lucide-svelte';
+	import { Timer, WifiOff, Shield } from 'lucide-svelte';
+
+	let copied = $state(false);
+	const installCommand = 'brew install ayushman/stash/stash';
+
+	async function copyToClipboard() {
+		try {
+			await navigator.clipboard.writeText(installCommand);
+			copied = true;
+			setTimeout(() => (copied = false), 2000);
+		} catch (err) {
+			console.error('Failed to copy:', err);
+		}
+	}
 </script>
 
-<section class="relative min-h-screen overflow-hidden bg-dark-green-950">
-	<!-- Geometric background patterns -->
-	<div class="absolute inset-0 bg-geometric"></div>
-	
-	<!-- Decorative circles -->
-	<div
-		class="absolute right-0 top-0 h-[600px] w-[600px] rounded-full border border-dark-green-700/20"
-		style="transform: translate(30%, -30%)"
-	></div>
-	<div
-		class="absolute left-0 top-1/2 h-[400px] w-[400px] rounded-full border border-dark-green-700/20"
-		style="transform: translate(-50%, -50%)"
-	></div>
-
-	<!-- Grid overlay -->
-	<div
-		class="absolute inset-0 opacity-10"
-		style="background-image: linear-gradient(rgba(77, 222, 128, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(77, 222, 128, 0.1) 1px, transparent 1px); background-size: 50px 50px;"
-	></div>
-
+<section class="relative min-h-screen bg-bg-primary">
 	<!-- Content -->
-	<div class="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
-		<div class="mx-auto max-w-4xl text-center">
+	<div class="mx-auto max-w-(--max-content) px-6 py-24 lg:py-32">
+		<div class="mx-auto max-w-(--max-narrow) text-center">
 			<!-- Badge -->
-			<div class="mb-8 inline-flex items-center gap-2 rounded-full border border-accent-green-500/30 bg-accent-green-500/10 px-4 py-2 text-sm text-accent-green-400">
-				<span class="relative flex h-2 w-2">
-					<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-green-400 opacity-75"></span>
-					<span class="relative inline-flex h-2 w-2 rounded-full bg-accent-green-500"></span>
-				</span>
+			<div class="mb-8 inline-flex items-center gap-2 rounded border border-border px-3 py-1.5 text-sm text-text-secondary font-mono">
 				Built in Rust • Local-First • Open Source
 			</div>
 
 			<!-- Headline -->
-			<h1
-				class="mb-6 font-['Inter'] text-6xl font-bold leading-tight text-white sm:text-7xl lg:text-8xl"
-			>
-				Take control of your
-				<span
-					class="bg-gradient-to-r from-accent-green-400 to-accent-green-600 bg-clip-text text-transparent"
-				>
-					reading
-				</span>
+			<h1 class="heading-display mb-6 text-text-primary">
+				Take control of your reading
 			</h1>
 
 			<!-- Subheadline -->
-			<p class="mb-12 text-xl leading-relaxed text-gray-300 sm:text-2xl">
-				Fast, local-first CLI tool for saving, organizing, and reading articles.<br />
+			<p class="body-large mb-10 text-text-secondary">
+				Fast, local-first CLI tool for saving, organizing, and reading articles.
+				<br class="hidden sm:block" />
 				Your articles, your way. No cloud, no tracking, just pure speed.
 			</p>
 
-			<!-- Install buttons -->
-			<div class="mb-16">
-				<InstallButtons />
+			<!-- Install command -->
+			<div class="mb-12 flex justify-center">
+				<button
+					onclick={copyToClipboard}
+					class="group flex items-center gap-3 rounded border border-border bg-bg-secondary px-5 py-3 font-mono text-sm transition-colors hover:border-accent hover:bg-bg-tertiary"
+				>
+					<span class="text-text-muted">$</span>
+					<code class="text-text-primary">{installCommand}</code>
+					<span class="text-text-muted transition-colors group-hover:text-accent">
+						{#if copied}
+							<Check size={16} strokeWidth={2} />
+						{:else}
+							<Copy size={16} strokeWidth={2} />
+						{/if}
+					</span>
+				</button>
 			</div>
 
 			<!-- Terminal preview -->
-			<div class="animate-float mx-auto max-w-3xl">
+			<div class="mx-auto max-w-2xl">
 				<div class="terminal-window">
 					<div class="terminal-header">
-						<div class="terminal-dot bg-red-500"></div>
-						<div class="terminal-dot bg-yellow-500"></div>
-						<div class="terminal-dot bg-green-500"></div>
+						<div class="terminal-dot bg-[#ff5f56]"></div>
+						<div class="terminal-dot bg-[#ffbd2e]"></div>
+						<div class="terminal-dot bg-[#27ca40]"></div>
 					</div>
-					<div class="terminal-body">
-						<div class="mb-2">
+					<div class="terminal-body text-left">
+						<div class="mb-1">
 							<span class="token-comment"># Save an article</span>
 						</div>
-						<div class="mb-4">
+						<div class="mb-3">
 							<span class="token-command">$ stash add</span>
 							<span class="token-arg"> https://blog.rust-lang.org/2024/10/17/Rust-1.82.0.html</span>
 							<span class="token-flag"> #rust</span>
 						</div>
-						<div class="mb-2 text-gray-400">✓ Saved: Announcing Rust 1.82.0</div>
-						<div class="mb-4 text-gray-500">  ID: 42 • blog.rust-lang.org</div>
+						<div class="mb-1 token-success">✓ Saved: Announcing Rust 1.82.0</div>
+						<div class="mb-4 text-text-muted">  ID: 42 • blog.rust-lang.org</div>
 
-						<div class="mb-2 mt-6">
+						<div class="mb-1">
 							<span class="token-comment"># List your articles</span>
 						</div>
-						<div class="mb-4">
+						<div class="mb-3">
 							<span class="token-command">$ stash ls</span>
 						</div>
-						<div class="text-gray-400">
-							<div class="mb-1">42 ★ Announcing Rust 1.82.0 • rust-lang.org • 2m ago</div>
-							<div class="mb-1">41   Building CLI Tools in Rust • github.com • 1h ago</div>
+						<div class="text-text-secondary">
+							<div class="mb-0.5">42 ★ Announcing Rust 1.82.0 • rust-lang.org • 2m ago</div>
+							<div class="mb-0.5">41   Building CLI Tools in Rust • github.com • 1h ago</div>
 							<div>40   The Art of Command Line • github.com • 3h ago</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Stats or quick info -->
-			<div class="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400">
+			<!-- Quick stats -->
+			<div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-text-muted">
 				<div class="flex items-center gap-2">
-					<svg class="h-5 w-5 text-accent-green-500" fill="currentColor" viewBox="0 0 20 20">
-						<path
-							fill-rule="evenodd"
-							d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-							clip-rule="evenodd"
-						></path>
-					</svg>
+					<Timer size={18} strokeWidth={1.5} class="text-accent" />
 					<span>Sub-100ms operations</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<svg class="h-5 w-5 text-accent-green-500" fill="currentColor" viewBox="0 0 20 20">
-						<path
-							fill-rule="evenodd"
-							d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-							clip-rule="evenodd"
-						></path>
-					</svg>
+					<WifiOff size={18} strokeWidth={1.5} class="text-accent" />
 					<span>Offline-first</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<svg class="h-5 w-5 text-accent-green-500" fill="currentColor" viewBox="0 0 20 20">
-						<path
-							fill-rule="evenodd"
-							d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-							clip-rule="evenodd"
-						></path>
-					</svg>
+					<Shield size={18} strokeWidth={1.5} class="text-accent" />
 					<span>Privacy-focused</span>
 				</div>
 			</div>

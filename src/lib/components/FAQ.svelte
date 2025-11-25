@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ChevronDown } from 'lucide-svelte';
+
 	let openIndex = $state<number | null>(null);
 
 	const faqs = [
@@ -39,47 +41,36 @@
 	}
 </script>
 
-<section class="relative bg-dark-green-950 py-24">
-	<div class="mx-auto max-w-4xl px-6 lg:px-8">
+<section class="bg-bg-primary py-16 md:py-24">
+	<div class="mx-auto max-w-(--max-narrow) px-6">
 		<!-- Section header -->
-		<div class="mb-16 text-center">
-			<h2 class="mb-4 font-['Inter'] text-4xl font-bold text-white sm:text-5xl">
-				Everything you need to know
+		<div class="mb-12 text-center">
+			<h2 class="heading-section mb-4 text-text-primary">
+				Frequently asked questions
 			</h2>
-			<p class="text-xl text-gray-400">Common questions about Stash</p>
+			<p class="body-base text-text-secondary">Common questions about Stash</p>
 		</div>
 
 		<!-- FAQ items -->
-		<div class="space-y-4">
+		<div class="space-y-3">
 			{#each faqs as faq, index}
 				<div
-					class="overflow-hidden rounded-xl border border-dark-green-700/30 bg-dark-green-900/30 backdrop-blur-sm transition-all hover:border-accent-green-500/30"
+					class="rounded border border-border bg-bg-secondary transition-colors hover:border-border-light"
 				>
 					<button
 						onclick={() => toggle(index)}
-						class="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-dark-green-800/30"
+						class="flex w-full items-center justify-between p-5 text-left"
 					>
-						<span class="pr-4 text-lg font-semibold text-white">{faq.question}</span>
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-accent-green-500 transition-transform {openIndex ===
-							index
-								? 'rotate-180'
-								: ''}"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M19 9l-7 7-7-7"
-							></path>
-						</svg>
+						<span class="pr-4 text-base font-semibold text-text-primary">{faq.question}</span>
+						<ChevronDown 
+							size={20} 
+							strokeWidth={1.5} 
+							class="shrink-0 text-text-muted transition-transform {openIndex === index ? 'rotate-180' : ''}" 
+						/>
 					</button>
 					{#if openIndex === index}
-						<div class="border-t border-dark-green-700/30 p-6 pt-4">
-							<p class="leading-relaxed text-gray-400">{faq.answer}</p>
+						<div class="border-t border-border px-5 pb-5 pt-4">
+							<p class="text-sm leading-relaxed text-text-secondary">{faq.answer}</p>
 						</div>
 					{/if}
 				</div>

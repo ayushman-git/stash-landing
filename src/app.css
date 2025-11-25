@@ -1,18 +1,33 @@
+/* Import JetBrains Mono for code/terminal */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
-  /* Dark green color palette inspired by rollups.com */
-  --color-dark-green-950: #0a0f0d;
-  --color-dark-green-900: #1a3a2e;
-  --color-dark-green-800: #2d5a4a;
-  --color-dark-green-700: #3d6f5c;
-  --color-accent-green-400: #86efac;
-  --color-accent-green-500: #4ade80;
-  --color-accent-green-600: #22c55e;
+  /* Soft Engineering color palette - Apple-ish but dev-centric */
+  --color-bg-primary: #F7F8FA;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F1F3F5;
+  --color-terminal-dark: #1A1C1F;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4E4E4E;
+  --color-text-muted: #8A8A8A;
+  --color-accent: #7CA9FF;
+  --color-accent-secondary: #A4B6D6;
+  --color-border: #E3E5E8;
+  --color-border-light: #E3E5E8;
   
-  /* Typography */
-  --font-size-display: 4.5rem;
-  --line-height-display: 1.1;
+  /* Typography - tighter, more refined */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Monaco', 'Menlo', monospace;
+  
+  /* Spacing scale (8px base) */
+  --spacing-section: 96px;
+  --spacing-section-mobile: 64px;
+  
+  /* Max content width */
+  --max-content: 1000px;
+  --max-narrow: 700px;
 }
 
 /* Global styles */
@@ -20,78 +35,80 @@
   scroll-behavior: smooth;
 }
 
+html {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
 body {
   overflow-x: hidden;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
-/* Custom animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Typography utilities */
+.heading-display {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.heading-section {
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out;
+.body-large {
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.body-base {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Geometric background patterns */
-.bg-geometric {
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(77, 222, 128, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(77, 222, 128, 0.03) 0%, transparent 50%);
+.mono {
+  font-family: var(--font-mono);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-green-950);
+  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-dark-green-800);
-  border-radius: 5px;
+  background: var(--color-border);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-dark-green-700);
+  background: var(--color-border-light);
 }
 
-/* Terminal mockup styles */
+/* Terminal mockup styles - sharp edges per design principles */
 .terminal-window {
-  background: #1e1e1e;
+  background: var(--color-terminal-dark);
   border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
   overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .terminal-header {
-  background: #323232;
-  padding: 8px 12px;
+  background: #232529;
+  padding: 10px 14px;
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .terminal-dot {
@@ -102,29 +119,58 @@ body {
 
 .terminal-body {
   padding: 20px;
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
-  line-height: 1.6;
-  color: #d4d4d4;
+  line-height: 1.5;
+  color: #E2E2E2;
+  overflow-x: auto;
 }
 
-/* Code syntax highlighting */
+/* Code syntax highlighting - using pastel blue accent */
 .token-command {
-  color: #4ade80;
+  color: var(--color-accent);
 }
 
 .token-arg {
-  color: #86efac;
+  color: #E2E2E2;
 }
 
 .token-flag {
-  color: #60a5fa;
+  color: var(--color-accent-secondary);
 }
 
 .token-comment {
-  color: #6b7280;
+  color: #6B7280;
 }
 
 .token-output {
-  color: #d4d4d4;
+  color: #9CA3AF;
+}
+
+.token-success {
+  color: #22c55e;
+}
+
+/* Section dividers */
+.section-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0;
+}
+
+/* Card with left accent bar */
+.card-accent {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.card-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
 }
