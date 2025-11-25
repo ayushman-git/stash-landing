@@ -17,6 +17,24 @@
   --color-border: #E3E5E8;
   --color-border-light: #E3E5E8;
   
+  /* Terminal window control dots */
+  --color-terminal-dot-red: #ff5f56;
+  --color-terminal-dot-yellow: #ffbd2e;
+  --color-terminal-dot-green: #27ca40;
+  
+  /* Terminal header and text */
+  --color-terminal-header: #232529;
+  --color-terminal-text: #E2E2E2;
+  --color-terminal-border: rgba(255, 255, 255, 0.1);
+  
+  /* Syntax highlighting */
+  --color-token-comment: #6B7280;
+  --color-token-output: #9CA3AF;
+  --color-token-success: #22c55e;
+  
+  /* Shadows */
+  --shadow-terminal: 0 4px 24px rgba(0, 0, 0, 0.08);
+  
   /* Typography - tighter, more refined */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Monaco', 'Menlo', monospace;
@@ -99,16 +117,16 @@ body {
   border-radius: 8px;
   border: 1px solid var(--color-border);
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-terminal);
 }
 
 .terminal-header {
-  background: #232529;
+  background: var(--color-terminal-header);
   padding: 10px 14px;
   display: flex;
   gap: 8px;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--color-terminal-border);
 }
 
 .terminal-dot {
@@ -122,7 +140,7 @@ body {
   font-family: var(--font-mono);
   font-size: 14px;
   line-height: 1.5;
-  color: #E2E2E2;
+  color: var(--color-terminal-text);
   overflow-x: auto;
 }
 
@@ -132,7 +150,7 @@ body {
 }
 
 .token-arg {
-  color: #E2E2E2;
+  color: var(--color-terminal-text);
 }
 
 .token-flag {
@@ -140,15 +158,15 @@ body {
 }
 
 .token-comment {
-  color: #6B7280;
+  color: var(--color-token-comment);
 }
 
 .token-output {
-  color: #9CA3AF;
+  color: var(--color-token-output);
 }
 
 .token-success {
-  color: #22c55e;
+  color: var(--color-token-success);
 }
 
 /* Section dividers */

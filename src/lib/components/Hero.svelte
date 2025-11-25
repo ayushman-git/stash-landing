@@ -59,9 +59,9 @@
 			<div class="mx-auto max-w-2xl">
 				<div class="terminal-window">
 					<div class="terminal-header">
-						<div class="terminal-dot bg-[#ff5f56]"></div>
-						<div class="terminal-dot bg-[#ffbd2e]"></div>
-						<div class="terminal-dot bg-[#27ca40]"></div>
+						<div class="terminal-dot bg-terminal-dot-red"></div>
+						<div class="terminal-dot bg-terminal-dot-yellow"></div>
+						<div class="terminal-dot bg-terminal-dot-green"></div>
 					</div>
 					<div class="terminal-body text-left">
 						<div class="mb-1">
