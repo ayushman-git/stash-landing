@@ -21,6 +21,8 @@
 					<li>
 						<a
 							href="https://github.com/ayushman-git/stash"
+							target="_blank"
+							rel="noopener noreferrer"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
 							Documentation
@@ -29,6 +31,8 @@
 					<li>
 						<a
 							href="https://github.com/ayushman-git/stash/releases"
+							target="_blank"
+							rel="noopener noreferrer"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
 							Releases
@@ -44,6 +48,8 @@
 					<li>
 						<a
 							href="https://github.com/ayushman-git/stash"
+							target="_blank"
+							rel="noopener noreferrer"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
 							GitHub
@@ -52,6 +58,8 @@
 					<li>
 						<a
 							href="https://github.com/ayushman-git/stash/issues"
+							target="_blank"
+							rel="noopener noreferrer"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
 							Issues
@@ -60,6 +68,8 @@
 					<li>
 						<a
 							href="https://github.com/ayushman-git/stash/blob/main/CONTRIBUTING.md"
+							target="_blank"
+							rel="noopener noreferrer"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
 							Contributing
@@ -76,6 +86,8 @@
 			<p>© 2025 Stash. MIT License.</p>
 			<a
 				href="https://github.com/ayushman-git/stash"
+				target="_blank"
+				rel="noopener noreferrer"
 				class="text-text-muted transition-colors hover:text-accent"
 				aria-label="GitHub"
 			>

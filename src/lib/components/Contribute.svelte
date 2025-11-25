@@ -51,6 +51,8 @@
 			<div class="text-center">
 				<a
 					href="https://github.com/ayushman-git/stash"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="inline-flex items-center gap-2 rounded bg-terminal-dark px-6 py-3 font-mono text-sm text-terminal-text transition-all hover:opacity-90"
 				>
 					<Github size={18} strokeWidth={1.5} />
