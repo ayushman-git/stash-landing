@@ -136,10 +136,10 @@ body {
 }
 
 .terminal-body {
-  padding: 20px;
+  padding: 24px;
   font-family: var(--font-mono);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--color-terminal-text);
   overflow-x: auto;
 }

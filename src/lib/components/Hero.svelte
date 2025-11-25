@@ -56,7 +56,7 @@
 			</div>
 
 			<!-- Terminal preview -->
-			<div class="mx-auto max-w-2xl">
+			<div class="mx-auto max-w-3xl">
 				<div class="terminal-window">
 					<div class="terminal-header">
 						<div class="terminal-dot bg-terminal-dot-red"></div>
