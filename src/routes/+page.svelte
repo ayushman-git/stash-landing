@@ -2,6 +2,7 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Features from '$lib/components/Features.svelte';
 	import InAction from '$lib/components/InAction.svelte';
+	import Contribute from '$lib/components/Contribute.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
@@ -9,5 +10,6 @@
 	<Hero />
 	<Features />
 	<InAction />
+	<Contribute />
 	<Footer />
 </div>
