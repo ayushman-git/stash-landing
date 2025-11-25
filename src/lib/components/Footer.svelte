@@ -28,14 +28,6 @@
 					</li>
 					<li>
 						<a
-							href="https://github.com/ayushman-git/stash#getting-started"
-							class="text-text-secondary transition-colors hover:text-accent"
-						>
-							Getting Started
-						</a>
-					</li>
-					<li>
-						<a
 							href="https://github.com/ayushman-git/stash/releases"
 							class="text-text-secondary transition-colors hover:text-accent"
 						>
