@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import { base } from '$app/paths';
 	
 	let { children } = $props();
 </script>
@@ -20,8 +20,10 @@
 	<meta name="twitter:title" content="Stash - Your Local-First Article Manager" />
 	<meta name="twitter:description" content="Fast, local-first CLI tool for saving, organizing, and reading articles. Built in Rust for speed and privacy." />
 	
-	<!-- Favicon -->
-	<link rel="icon" href={favicon} />
+	<!-- Favicon for light mode (show dark icon) -->
+	<link rel="icon" href="{base}/favicon-light.svg" media="(prefers-color-scheme: light)" />
+	<!-- Favicon for dark mode (show light icon) -->
+	<link rel="icon" href="{base}/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
 	
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
