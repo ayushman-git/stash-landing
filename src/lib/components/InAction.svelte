@@ -51,11 +51,11 @@
 				<div class="md:order-2">
 					<p class="mb-2 font-mono text-sm text-accent">stash pick | stash search</p>
 					<h3 class="mb-4 text-2xl font-semibold text-text-primary tracking-tight">
-						Find it before you finish typing.
+						Find it fast
 					</h3>
 					<p class="mb-4 text-text-secondary leading-relaxed">
 						Fuzzy search across titles, tags, and full content. Start typing and results 
-						appear instantly. Pipe to fzf for the full interactive experience.
+						appear instantly.
 					</p>
 					<div class="flex flex-wrap gap-2 font-mono text-xs">
 						<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">stash ls --tag rust</span>
@@ -89,16 +89,15 @@
 			<!-- Workflow 3: Read -->
 			<div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
 				<div>
-					<p class="mb-2 font-mono text-sm text-accent">stash read &lt;id&gt;</p>
+					<p class="mb-2 font-mono text-sm text-accent">stash open &lt;id&gt;</p>
 					<h3 class="mb-4 text-2xl font-semibold text-text-primary tracking-tight">
 						Read it. Finally.
 					</h3>
 					<p class="mb-4 text-text-secondary leading-relaxed">
-						Opens in your terminal with your pager of choice. Clean Markdown, no ads, 
-						no cookie banners, no "subscribe to continue reading" popups.
+						Found what you were looking for? Just <code class="rounded bg-bg-tertiary px-1 text-xs">stash open</code> and it pops right up in your browser. No copy-pasting URLs.
 					</p>
 					<p class="font-mono text-sm text-text-muted">
-						Export to PDF, epub, or just cat it to stdout. Your content, your rules.
+						markdown reader in terminal coming soon
 					</p>
 				</div>
 				<div class="terminal-window">
@@ -109,19 +108,11 @@
 					</div>
 					<div class="terminal-body">
 						<div class="mb-1 token-comment"># Time to actually read it</div>
-						<div class="mb-3">
-							<span class="token-command">$ stash read</span>
+						<div class="mb-2">
+							<span class="token-command">$ stash open</span>
 							<span class="token-arg"> 127</span>
 						</div>
-						<div class="border-l-2 border-accent/30 pl-4">
-							<div class="mb-2 text-lg font-semibold text-text-primary">Ghosts · Nanoglyph 044</div>
-							<div class="mb-3 text-text-muted text-xs">brandur.org • 8 min read • saved 2 days ago</div>
-							<div class="text-text-secondary text-sm leading-relaxed">
-								I've been mass-unsubscribing from newsletters. 
-								Not because they're bad, but because I never 
-								read them...
-							</div>
-						</div>
+						<div class="token-success">✓ Opening in browser...</div>
 					</div>
 				</div>
 			</div>
