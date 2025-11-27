@@ -56,11 +56,23 @@
 
 			<!-- Terminal preview -->
 			<div class="mx-auto max-w-3xl relative">
-				<img
-					src={catImage}
-					alt="Cat"
-					class="absolute -top-[50px] left-2 w-24 z-10 object-contain"
-				/>
+				<!-- Cat with thought bubble -->
+				<div class="absolute -top-[50px] left-2 z-10 group">
+					<img
+						src={catImage}
+						alt="Cat"
+						class="w-24 object-contain cursor-pointer"
+					/>
+					<!-- Thought bubble -->
+					<div class="absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+						<div class="bg-white text-gray-800 px-3 py-2 rounded-xl text-sm font-medium whitespace-nowrap shadow-lg">
+							stash it for later!
+						</div>
+						<!-- Bubble tail dots -->
+						<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full"></div>
+						<div class="absolute -bottom-4 left-[calc(50%+4px)] w-2 h-2 bg-white rounded-full"></div>
+					</div>
+				</div>
 				<div class="terminal-window">
 					<div class="terminal-header">
 						<div class="terminal-dot bg-terminal-dot-red"></div>
