@@ -100,19 +100,39 @@
 						markdown reader in terminal coming soon
 					</p>
 				</div>
-				<div class="terminal-window">
-					<div class="terminal-header">
-						<div class="terminal-dot bg-terminal-dot-red"></div>
-						<div class="terminal-dot bg-terminal-dot-yellow"></div>
-						<div class="terminal-dot bg-terminal-dot-green"></div>
-					</div>
-					<div class="terminal-body">
-						<div class="mb-1 token-comment"># Time to actually read it</div>
-						<div class="mb-2">
-							<span class="token-command">$ stash open</span>
-							<span class="token-arg"> 127</span>
+				<div class="space-y-4">
+					<!-- Terminal window -->
+					<div class="terminal-window">
+						<div class="terminal-header">
+							<div class="terminal-dot bg-terminal-dot-red"></div>
+							<div class="terminal-dot bg-terminal-dot-yellow"></div>
+							<div class="terminal-dot bg-terminal-dot-green"></div>
 						</div>
-						<div class="token-success">✓ Opening in browser...</div>
+						<div class="terminal-body">
+							<div class="mb-1 token-comment"># Time to actually read it</div>
+							<div class="mb-2">
+								<span class="token-command">$ stash open</span>
+								<span class="token-arg"> 127</span>
+							</div>
+							<div class="token-success">✓ Opening in browser...</div>
+						</div>
+					</div>
+					
+					<!-- Browser window -->
+					<div class="browser-window">
+						<div class="browser-header">
+							<div class="terminal-dot bg-terminal-dot-red"></div>
+							<div class="terminal-dot bg-terminal-dot-yellow"></div>
+							<div class="terminal-dot bg-terminal-dot-green"></div>
+							<div class="browser-url-bar truncate">brandur.org/nanoglyphs/044-ghosts</div>
+						</div>
+						<div class="browser-body">
+							<p class="mb-2 text-xs text-text-muted uppercase tracking-wide">Nanoglyph 044</p>
+							<h4 class="mb-3 text-lg font-semibold text-text-primary">Ghosts</h4>
+							<p class="text-sm text-text-secondary leading-relaxed">
+								I've been mass-unsubscribing from newsletters. Not because they're bad, but because I never read them...
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
