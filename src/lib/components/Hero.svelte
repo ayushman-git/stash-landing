@@ -3,7 +3,7 @@
 	import { Timer, WifiOff, Shield } from 'lucide-svelte';
 
 	let copied = $state(false);
-	const installCommand = 'brew install ayushman/stash/stash';
+	const installCommand = 'brew install ayushman-git/tap/stash';
 
 	async function copyToClipboard() {
 		try {
