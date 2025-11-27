@@ -27,6 +27,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="f5602a52-acb3-4eb2-b455-b3f7084a3994"></script>
 </svelte:head>
 
 {@render children()}
