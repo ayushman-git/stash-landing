@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Check, Copy } from 'lucide-svelte';
 	import { Timer, WifiOff, Shield } from 'lucide-svelte';
+	import catImage from '$lib/assets/cat.png';
 
 	let copied = $state(false);
 	const installCommand = 'brew install ayushman-git/tap/stash';
@@ -54,7 +55,12 @@
 			</div>
 
 			<!-- Terminal preview -->
-			<div class="mx-auto max-w-3xl">
+			<div class="mx-auto max-w-3xl relative">
+				<img
+					src={catImage}
+					alt="Cat"
+					class="absolute -top-[50px] left-2 w-24 z-10 object-contain"
+				/>
 				<div class="terminal-window">
 					<div class="terminal-header">
 						<div class="terminal-dot bg-terminal-dot-red"></div>
