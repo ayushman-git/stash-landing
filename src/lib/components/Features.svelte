@@ -18,11 +18,11 @@
 			<div class="relative overflow-hidden rounded border border-border bg-bg-secondary p-8 lg:row-span-2">
 				<div class="mb-6">
 					<h3 class="mb-1 font-mono text-sm text-accent">Rust = instant</h3>
-					<p class="text-2xl font-semibold text-text-primary tracking-tight">12ms. Not a typo.</p>
+					<p class="text-2xl font-semibold text-text-primary tracking-tight">12ms</p>
 				</div>
 				<p class="mb-6 text-text-secondary leading-relaxed">
-					While other tools spin up Electron or hit a server, stash is already done. 
-					Cold start to results in the time it takes you to blink.
+					Since stash is made on Rust, it's super fast and responsive.
+					Most of the commands execute in under 20 milliseconds, even with thousands of articles.
 				</p>
 				<div class="rounded bg-bg-tertiary p-4 font-mono text-sm">
 					<div class="text-text-muted mb-2">$ time stash ls</div>
@@ -37,11 +37,10 @@
 			<div class="rounded border border-border bg-bg-secondary p-8">
 				<div class="mb-4">
 					<h3 class="mb-1 font-mono text-sm text-accent">~/.local/share/stash/</h3>
-					<p class="text-xl font-semibold text-text-primary tracking-tight">Your machine. Your data. Period.</p>
+					<p class="text-xl font-semibold text-text-primary tracking-tight">Your machine. Your data.</p>
 				</div>
 				<p class="text-text-secondary leading-relaxed">
-					One SQLite file. No account creation, no "sync to cloud" popups, no 
-					<span class="font-mono text-text-muted">"we value your privacy"</span> banners. 
+					One SQLite file. No account creation.
 					Delete the folder and it's gone. Back it up and it's safe.
 				</p>
 			</div>
@@ -54,7 +53,7 @@
 				</div>
 				<p class="mb-4 text-text-secondary leading-relaxed">
 					The database is just a file. Throw it in a git repo. 
-					Now you have history, branches, and sync across machines—using tools you already know.
+					Now you have history, branches, and sync across machines.
 				</p>
 				<div class="flex flex-wrap gap-2 font-mono text-xs">
 					<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">git diff</span>
@@ -67,15 +66,15 @@
 		<!-- Bottom row - smaller feature cards -->
 		<div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			<div class="rounded border border-border bg-bg-secondary p-6">
-				<p class="mb-2 font-semibold text-text-primary">Offline? Who cares.</p>
+				<p class="mb-2 font-semibold text-text-primary">TUI included</p>
 				<p class="text-sm text-text-secondary">
-					Articles cached as Markdown. Read on a plane, train, or spotty coffee shop wifi.
+					If you don't like typing commands, there's a full terminal UI built-in. Just run <code class="rounded bg-bg-tertiary px-1 text-xs">stash tui</code>.
 				</p>
 			</div>
 			<div class="rounded border border-border bg-bg-secondary p-6">
 				<p class="mb-2 font-semibold text-text-primary">fzf → fuzzy everything</p>
 				<p class="text-sm text-text-secondary">
-					Pipe to fzf, grep through content, script your workflows. Unix philosophy, respected.
+					Pipe to fzf, grep through content, script your workflows. Built for devs.
 				</p>
 			</div>
 			<div class="rounded border border-border bg-bg-secondary p-6">

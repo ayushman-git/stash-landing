@@ -60,7 +60,7 @@
 					<div class="flex flex-wrap gap-2 font-mono text-xs">
 						<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">stash ls --tag rust</span>
 						<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">stash search "async"</span>
-						<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">stash pick | fzf</span>
+						<span class="rounded bg-bg-tertiary px-2 py-1 text-text-muted">stash pick</span>
 					</div>
 				</div>
 				<div class="md:order-1">
